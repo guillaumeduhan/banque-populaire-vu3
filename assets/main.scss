@@ -1,3 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@200;300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Hanken Grotesk', sans-serif;
+  }
+
+  h1 {
+    @apply text-3xl font-extrabold;
+  }
+
+  .Account {
+    @apply bg-slate-100/50 flex flex-col items-center rounded-lg p-6 cursor-pointer hover:bg-slate-100;
+
+    h2 {
+      @apply font-bold;
+    }
+
+    .price {
+      @apply text-xl font-bold my-2;
+    }
+  }
+
+  .avatar {
+    @apply w-12 rounded-full overflow-hidden cursor-pointer hover:opacity-80;
+  }
+
+  .description {
+    @apply text-slate-500;
+  }
+
+  .menu {
+    li {
+      @apply bg-blue-800 text-white py-3 px-6 my-2 rounded-r-full hover:bg-orange-500 cursor-pointer transition flex items-center justify-between;
+
+      .icon {
+        @apply opacity-0 text-lg;
+      }
+
+      &:hover {
+        .icon {
+          @apply opacity-100 transition translate-x-3;
+        }
+      }
+    }
+  }
+
+  .notification {
+    @apply bg-blue-200 text-blue-900 px-3 py-2 rounded-lg cursor-pointer hover:bg-blue-900 transition hover:text-white;
+  }
+
+  .underMenu {
+    @apply px-6 my-6;
+
+    &--item {
+      @apply text-slate-500 text-sm my-2 transition hover:text-blue-600 cursor-pointer;
+    }
+
+    li {
+      @apply underMenu--item;
+    }
+  }
+
+  .user {
+    @apply hover:opacity-80 hover:text-blue-600 cursor-pointer;
+  }
+}

@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
+  <div class="flex w-100">
+    <Sidebar class="w-72" />
+    <NuxtPage />
   </div>
 </template>
