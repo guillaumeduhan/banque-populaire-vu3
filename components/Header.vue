@@ -9,8 +9,20 @@
         courantes.
       </p>
     </div>
-    <div class="flex items-center justify-start user">
-      <p class="mr-2 text-sm">Mon compte</p>
+    <div class="flex items-center justify-start">
+      <div
+        class="grid grid-cols-2 gap-3 mr-2 text-2xl text-gray-400 cursor-pointer "
+      >
+        <div class="relative">
+          <IconsMessage class="text-blue-600" />
+          <div
+            class="absolute w-4 h-4 text-xs font-bold text-center text-white bg-red-500 rounded-full  -right-2 -top-2"
+          >
+            1
+          </div>
+        </div>
+        <IconsBell class="hover:text-blue-600" />
+      </div>
       <div class="avatar">
         <img src="/me.png" alt="Guillaume Duhan" />
       </div>

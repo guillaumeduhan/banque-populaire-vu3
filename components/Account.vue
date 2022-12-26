@@ -13,20 +13,25 @@ const amount = computed(() => {
 
 <template>
   <div class="Account">
-    <img v-if="account.icon" class="h-32 mb-4" :src="account.icon" />
+    <img v-if="account.icon" class="h-24 mb-4" :src="account.icon" />
     <h2>{{ account.title }}</h2>
-    <p
-      class="price"
-      :class="account.amount > 0 ? 'text-green-500' : 'text-red-500'"
-    >
-      {{ amount }} €
+    <p class="price">
+      <span :class="account.amount > 0 ? 'text-green-500' : 'text-red-500'">
+        {{ amount }} €
+      </span>
+      <span class="text-sm description">{{
+        account.amount_btc ? `soit ${account.amount_btc} BTC` : ""
+      }}</span>
     </p>
     <div v-if="account.last_operation" class="text-sm text-center description">
-      <p>Dernière opération: {{ account.last_operation.amount }} €</p>
-      <p>
+      <p>Dernière opération:</p>
+      <div>
+        <span class="label">-{{ account.last_operation.amount }} €</span>
         {{ account.last_operation.date }}, {{ account.last_operation.title }}
-      </p>
+      </div>
     </div>
-    <p v-if="account.detail" class="description">{{ account.detail }}</p>
+    <p v-if="account.detail" class="text-sm text-center description">
+      {{ account.detail }}
+    </p>
   </div>
 </template>
