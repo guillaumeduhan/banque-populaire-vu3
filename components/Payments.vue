@@ -46,7 +46,7 @@ const showModal = () => {
         Liste de tous les paiements mensuels auxquels vous avez souscrit.
       </p>
     </header>
-    <div class="grid grid-cols-4 gap-4">
+    <div class="grid gap-4 lg:grid-cols-4">
       <div
         class="Payments--item"
         v-for="(item, index) in payments"
@@ -56,8 +56,11 @@ const showModal = () => {
           class="absolute text-2xl cursor-pointer  icon text-slate-300 hover:text-red-500 right-2 top-2"
           @click="showModal"
         />
-        <component class="mb-4 text-3xl text-gray-400" :is="item.component" />
-        <p class="mb-2">{{ item.title }}</p>
+        <component
+          class="text-3xl text-gray-400 lg:mb-4"
+          :is="item.component"
+        />
+        <p class="flex-grow px-4 lg:mb-2 lg:px-0 lg:flex">{{ item.title }}</p>
         <div class="text-sm label">{{ item.price }} €</div>
       </div>
     </div>

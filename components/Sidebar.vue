@@ -19,11 +19,13 @@ const underMenu = [
 </script>
 
 <template>
-  <div class="flex flex-col h-screen Sidebar">
-    <header class="p-6">
-      <img class="w-48" src="/logo.png" alt="Banque Populaire" />
+  <div
+    class="flex py-2 lg:py-2 lg:flex-col items-center lg:items-start lg:h-screen Sidebar"
+  >
+    <header class="w-auto lg:w-full mb-4">
+      <img class="w-32 lg:w-48" src="/logo.png" alt="Banque Populaire" />
     </header>
-    <main class="grow">
+    <main class="hidden lg:block grow">
       <ul class="menu">
         <li v-for="(item, index) in menu" :key="index">
           <span>{{ item }}</span>
@@ -34,13 +36,17 @@ const underMenu = [
         <li v-for="(item, index) in underMenu" :key="index">{{ item }}</li>
       </ul>
     </main>
-    <footer class="p-6">
-      <p class="p-3 text-xs rounded-lg description bg-slate-100">
-        Cyberplus v4 — produit bancaire revisité par Guillaume Duhan à
-        l'occasion du Think tank de Mai 2022.
-      </p>
+    <footer class="m-4">
+      <div class="flex rounded-lg text-green-500 bg-green-100 px-2 py-2 mx-2 w-full">
+        <div class="mr-2">
+          <IconsInfo class="text-lg text-green-500" />
+        </div>
+        <span class="text-xs"
+          >Cyberplus v4 revisité par Guillaume Duhan pour le think tank de Mai 2022.</span
+        >
+      </div>
     </footer>
   </div>
 </template>
 
-<style lang='scss'></style>
+<style lang="scss"></style>

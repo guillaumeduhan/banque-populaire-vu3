@@ -1,6 +1,6 @@
 <template>
-  <div class="flex w-100">
-    <Sidebar class="w-72" />
+  <div class="lg:flex w-100">
+    <Sidebar class="w-full lg:w-72" />
     <NuxtPage />
   </div>
 </template>

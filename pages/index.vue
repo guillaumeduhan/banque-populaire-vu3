@@ -38,24 +38,21 @@ const accounts = ref([
 </script>
 
 <template>
-  <div class="flex flex-col w-full px-10 py-6">
+  <div class="flex flex-col w-full p-3 lg:py-6 lg:px-10">
     <Header />
-    <main class="grid grid-cols-4 gap-4">
-      <div class="col-span-3">
-        <div class="grid grid-cols-2 gap-4">
-          <Account
-            v-for="(item, index) in accounts"
-            :key="index"
-            :account="item"
-          />
+    <main class="grid gap-4 xl:grid-cols-4">
+      <div class="xl:col-span-3">
+        <div class="grid gap-4 lg:grid-cols-2">
+          <Account v-for="(item, index) in accounts" :key="index" :account="item" />
         </div>
         <Payments />
       </div>
-      <div class="col-span-1">
+      <div class="w-full xl:col-span-1">
+        <Concil />
         <History />
       </div>
     </main>
   </div>
 </template>
 
-<style lang='scss'></style>
+<style lang="scss"></style>
